@@ -1,0 +1,31 @@
+dev:
+  asg: master
+  k8s-cluster: master
+  k8s-config: master
+  network: master
+  msk: master
+  elasticsearch: master
+  cloudwatch:
+  
+
+test:
+  api-lb: master
+  asg: master
+  k8s-cluster: master
+  k8s-config: master
+  network: master
+
+stage:
+  api-lb: master
+  asg: master
+  k8s-cluster: master
+  k8s-config: master
+  network: master
+
+prod:
+  api-lb: master
+  asg: master
+  k8s-cluster: master
+  k8s-config: master
+  network: master
+
