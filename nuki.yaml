@@ -18,8 +18,6 @@ action_:
     - install: Install dependencies
     - profiles: Set SSH and wallet profiles
     - list: List deployments
-    - create: Create new deployment
-    - modify: Modify deployment
     - apply: Apply deployment
     - destroy: Destroy deployment
 
@@ -44,42 +42,6 @@ list_:
   contents_split: "{{ nuki.deployments_list_ }}"
   separator: "."
   when: "{{ 'list' in nuki.action_ or 'deploy' in nuki.action_ }}"
-
-# Create Deployment
-create_:
-  type: nukikata
-  chdir: polkadot
-  when: "{{ 'create' in nuki.action_ }}"
-  existing_context: "{{ nuki }}"
-
-# Modify Existing
-modify_list_:
-  type: checkbox
-  message: Which deployment would you like to modify?
-  choices: "{{ nuki.deployments_list_ }}"
-  when:
-    - "{{ 'modify' in nuki.action_ }}"
-    - "{{ nuki.deployments_list_ | length != 0 }}"
-
-modify_warning:
-  type: print
-  statement: There are no deployments to modify
-  when:
-    - "{{ 'modify' in nuki.action_ }}"
-    - "{{ nuki.deployments_list_ | length == 0 }}"
-  
-modify_:
-  type: editor
-  message: Writer
-  when:
-    - "{{ 'modify' in nuki.action_ }}"
-    - "{{ nuki.deployments_list_ | length != 0 }}"
-  loop: "{{ nuki.modify_list_ }}"
-  eargs:
-    filename: "deployments/{{ nuki.item }}"
-    editor: nano
-    ext: .yaml
-    save: true
 
 # Apply
 apply_choices_:
