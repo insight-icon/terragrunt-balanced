@@ -104,7 +104,7 @@ The remote state bucket and path are created and managed for you by terragrunt. 
 
 
 ### Build Status
-- network - [![CircleCI](https://circleci.com/gh/insight-w3f/terraform-balanced-aws-network.svg?style=svg)](https://circleci.com/gh/insight-icon/terraform-balanced-aws-network)
+- network - [![CircleCI](https://circleci.com/gh/insight-icon/terraform-balanced-aws-network.svg?style=svg)](https://circleci.com/gh/insight-icon/terraform-balanced-aws-network)
 
 ### General
 - [terraform-ansible-playbook](https://github.com/insight-infrastructure/terraform-aws-ansible-playbook) ![](https://img.shields.io/github/v/release/insight-infrastructure/terraform-aws-ansible-playbook?style=svg)
