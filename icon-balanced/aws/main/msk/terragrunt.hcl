@@ -1,5 +1,5 @@
 terraform {
-  source = "github.com/hyprnz/terraform-aws-msk-module.git?ref=${local.vars.versions.k8s-cluster}"
+  source = "github.com/insight-infrastructure/terraform-aws-msk.git?ref=${local.vars.versions.msk}"
 }
 
 include {
@@ -21,10 +21,10 @@ dependency "network" {
 
 inputs = {
   vpc_id = dependency.network.outputs.vpc_id
-  client_subnets = dependency.network.outputs.private_subnets
+  subnet_ids = dependency.network.outputs.private_subnets
 
-  security_group_id = dependency.network.outputs.k8s_security_group_id
+  security_group_id = dependency.network.outputs.sg_msk_id
   security_groups = module.example_no_vpc.default_security_group
 
-  worker_additional_security_group_ids = [dependency.network.outputs.consul_security_group_id, dependency.network.outputs.monitoring_security_group_id]
+  additional_security_groups = [dependency.network.outputs.sg_msk_id, dependency.network.outputs.monitoring_security_group_id]
 }
