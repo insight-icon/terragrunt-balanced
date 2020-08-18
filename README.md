@@ -4,6 +4,10 @@
 
 This is a reference architecture for deploying infrastructure components for the [Balanced Network](https://balanced.network/) stable coin.
 
+### Build Status
+- network - [![CircleCI](https://circleci.com/gh/insight-icon/terraform-balanced-aws-network.svg?style=svg)](https://circleci.com/gh/insight-icon/terraform-balanced-aws-network)
+- msk - [![CircleCI](https://circleci.com/gh/insight-infrastructure/terraform-aws-msk.svg?style=svg)](https://circleci.com/gh/insight-infrastructure/terraform-aws-msk)
+
 ## Deploying the Stack
 
 The process involves three steps.
@@ -101,10 +105,6 @@ Deployment files are created locally by the nukikata CLI in the `deployments` di
 
 The remote state bucket and path are created and managed for you by terragrunt. This is where the state of all the
  deployments is kept and can be referenced in subsequent deployments.
-
-
-### Build Status
-- network - [![CircleCI](https://circleci.com/gh/insight-icon/terraform-balanced-aws-network.svg?style=svg)](https://circleci.com/gh/insight-icon/terraform-balanced-aws-network)
 
 ### General
 - [terraform-ansible-playbook](https://github.com/insight-infrastructure/terraform-aws-ansible-playbook) ![](https://img.shields.io/github/v/release/insight-infrastructure/terraform-aws-ansible-playbook?style=svg)
